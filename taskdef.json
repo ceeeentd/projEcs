@@ -1,0 +1,19 @@
+{
+  "family": "test-ecs",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::030370283995:role/test-ecs-ecs-execution-role",
+  "taskRoleArn": "arn:aws:iam::030370283995:role/test-ecs-ecs-task-role",
+  "containerDefinitions": [
+    {
+      "name": "ecs-test",
+      "image": "<IMAGE1_NAME>",
+      "essential": true,
+      "portMappings": [
+        { "containerPort": 3000, "hostPort": 3000, "protocol": "tcp" }
+      ]
+    }
+  ]
+}
