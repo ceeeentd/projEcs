@@ -30,8 +30,6 @@ phases:
       - docker push "${REPOSITORY_URI}:${IMAGE_TAG}"
       - printf '{"ImageURI":"%s"}' "${REPOSITORY_URI}:${IMAGE_TAG}" > imageDetail.json
       - echo "Build completed on $(date)"
-      - cat taskdef.json
-      - cat imageDetail.json
 
 artifacts:
   files:
